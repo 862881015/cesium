@@ -1,3 +1,4 @@
+import { defined } from "../Cesium.js";
 import hasExtension from "./hasExtension.js";
 
 /**
@@ -13,11 +14,13 @@ import hasExtension from "./hasExtension.js";
  * @experimental This feature is using part of the 3D Tiles spec that is not final and is subject to change without Cesium's standard deprecation policy.
  */
 export default function findGroupMetadata(tileset, contentHeader) {
-  if (hasExtension(contentHeader, "3DTILES_metadata")) {
-    const extension = contentHeader.extensions["3DTILES_metadata"];
-    const groupId = extension.group;
-    return tileset.metadata.groups[groupId];
+  if (!defined(tileset.metadata)) {
+    return undefined;
   }
 
-  return undefined;
+  const group = hasExtension(contentHeader, "3DTILES_metadata")
+    ? contentHeader.extensions["3DTILES_metadata"].group
+    : contentHeader.group;
+
+  return tileset.metadata.groups[group];
 }

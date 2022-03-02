@@ -5,15 +5,14 @@
   },
   "schema": {
     "classes": {
-      "tile": {
+      "content": {
         "properties": {
-          "color": {
-            "type": "VEC4",
-            "componentType": "FLOAT32"
+          "highlightColor": {
+            "type": "VEC3",
+            "componentType": "UINT8"
           },
-          "population": {
-            "type": "SCALAR",
-            "componentType": "UINT32"
+          "author": {
+            "type": "STRING"
           }
         }
       }
@@ -44,13 +43,13 @@
           0,
           88
         ]
-      }
-    },
-    "metadata": {
-      "class": "tile",
-      "properties": {
-        "color": [0.5, 0.0, 1.0],
-        "population": 530
+      },
+      "metadata": {
+        "class": "content",
+        "properties": {
+          "highlightColor": [255, 0, 0],
+          "author": "Cesium"
+        }
       }
     },
     "children": [
@@ -67,13 +66,13 @@
         },
         "geometricError": 0,
         "content": {
-          "uri": "ll.b3dm"
-        },
-        "metadata": {
-          "class": "tile",
-          "properties": {
-            "color": [1.0, 1.0, 0.0],
-            "population": 50
+          "uri": "ll.b3dm",
+          "metadata": {
+            "class": "content",
+            "properties": {
+              "highlightColor": [255, 255, 255],
+              "author": "First Company"
+            }
           }
         }
       },
@@ -90,13 +89,13 @@
         },
         "geometricError": 0,
         "content": {
-          "uri": "lr.b3dm"
-        },
-        "metadata": {
-          "class": "tile",
-          "properties": {
-            "color": [1.0, 0.0, 0.5],
-            "population": 230
+          "uri": "lr.b3dm",
+          "metadata": {
+            "class": "content",
+            "properties": {
+              "highlightColor": [255, 0, 255],
+              "author": "Second Company"
+            }
           }
         }
       },
@@ -113,13 +112,13 @@
         },
         "geometricError": 0,
         "content": {
-          "uri": "ur.b3dm"
-        },
-        "metadata": {
-          "class": "tile",
-          "properties": {
-            "color": [1.0, 0.5, 0.0],
-            "population": 150
+          "uri": "ur.b3dm",
+          "metadata": {
+            "class": "content",
+            "properties": {
+              "highlightColor": [0, 255, 0],
+              "author": "Third Company"
+            }
           }
         }
       },
@@ -136,13 +135,13 @@
         },
         "geometricError": 0,
         "content": {
-          "uri": "ul.b3dm"
-        },
-        "metadata": {
-          "class": "tile",
-          "properties": {
-            "color": [1.0, 0.0, 0.0],
-            "population": 100
+          "uri": "ul.b3dm",
+          "metadata": {
+            "class": "content",
+            "properties": {
+              "highlightColor": [0, 0, 255],
+              "author": "Fourth Company"
+            }
           }
         }
       }

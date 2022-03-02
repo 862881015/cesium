@@ -18,12 +18,9 @@ import TileMetadata from "./TileMetadata.js";
  * @experimental This feature is using part of the 3D Tiles spec that is not final and is subject to change without Cesium's standard deprecation policy.
  */
 export default function findTileMetadata(tileset, tileHeader) {
-  let metadataJson;
-  if (defined(tileHeader.metadata)) {
-    metadataJson = tileHeader.metadata;
-  } else if (hasExtension(tileHeader, "3DTILES_metadata")) {
-    metadataJson = tileHeader.extensions["3DTILES_metadata"];
-  }
+  const metadataJson = hasExtension(tileHeader, "3DTILES_metadata")
+    ? tileHeader.extensions["3DTILES_metadata"]
+    : tileHeader.metadata;
 
   if (!defined(metadataJson)) {
     return undefined;
